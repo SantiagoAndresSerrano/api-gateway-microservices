@@ -13,12 +13,13 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
-            allowedHeaders: "*"
+            allowedHeaders:
+             - Content-Type
             allowedMethods:
-            - GET
-            - POST
-            - PUT
-            - DELETE
+              - GET
+              - POST
+              - PUT
+              - DELETE
       routes:
         - id: authmicroservice
           uri: https://auth-microservice-ufps.herokuapp.com/
