@@ -10,21 +10,16 @@ spring:
     gateway:
       globalcors:
         corsConfigurations:
-          '[/**]':
+          '[/auth/**]':
             allowedOrigins: "*"
-            allowedMethods:
-            - GET
+            allowedMethods: "*"
       routes:
         - id: authmicroservice
           uri: https://auth-microservice-ufps.herokuapp.com/
-          filters:
-          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
           predicates:
             - Path=/auth/**
         - id: registermicroservice
           uri: https://room-registration-microservice.herokuapp.com/
-          filters:
-          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
           predicates:
             - Path=/roomregister/**
   application:
