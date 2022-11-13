@@ -9,17 +9,11 @@ spring:
   cloud:
     gateway:
       globalcors:
-        add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
-            allowedHeaders:
-             - Content-Type
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
+            allowedHeaders: "*"
+            allowedMethods: "*"
       routes:
         - id: authmicroservice
           uri: https://auth-microservice-ufps.herokuapp.com/
