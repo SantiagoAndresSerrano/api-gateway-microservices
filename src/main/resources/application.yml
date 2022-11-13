@@ -17,14 +17,14 @@ spring:
           uri: https://room-registration-microservice.herokuapp.com/
           predicates:
             - Path=/roomregister/**
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
       globalcors:
-          corsConfigurations:
-             '[/**]':
-             allowed-origins: http://localhost:4200
-             allowed-methods: *
-             allowed-headers: *
-             allow-credentials: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200/"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
   application:
     name: api-gateway
