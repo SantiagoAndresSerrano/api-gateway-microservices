@@ -1,0 +1,21 @@
+server:
+  port: 8090
+eureka:
+  client:
+    service-url:
+      defaultZone : https://eureka-service-ufps.herokuapp.com/eureka
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: authmicroservice
+          uri: https://auth-microservice-ufps.herokuapp.com/
+          predicates:
+            - Path=/auth/**
+        - id: registermicroservice
+          uri: https://room-registration-microservice.herokuapp.com/
+          predicates:
+            - Path=/roomregister/**
+  application:
+    name: api-gateway
