@@ -17,5 +17,14 @@ spring:
           uri: https://room-registration-microservice.herokuapp.com/
           predicates:
             - Path=/roomregister/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
   application:
     name: api-gateway
