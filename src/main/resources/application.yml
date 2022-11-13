@@ -8,6 +8,15 @@ eureka:
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
       routes:
         - id: authmicroservice
           uri: https://auth-microservice-ufps.herokuapp.com/
@@ -17,14 +26,5 @@ spring:
           uri: https://room-registration-microservice.herokuapp.com/
           predicates:
             - Path=/roomregister/**
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200/"
-            allowedMethods:
-            - GET
-            - POST
-            - PUT
-            - DELETE
   application:
     name: api-gateway
