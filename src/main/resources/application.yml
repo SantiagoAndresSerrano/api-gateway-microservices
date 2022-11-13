@@ -22,9 +22,9 @@ spring:
       globalcors:
           corsConfigurations:
              '[/**]':
-             allowed-origins: "http://localhost:4200"
-             allowed-methods: "*"
-             allowed-headers: "*"
+             allowed-origins: http://localhost:4200
+             allowed-methods: *
+             allowed-headers: *
              allow-credentials: true
   application:
     name: api-gateway
