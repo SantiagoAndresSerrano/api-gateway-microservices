@@ -11,8 +11,9 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:4200"
+            allowedOrigins: "*"
             allowedMethods: "*"
+            allowedHeaders: "*"
       routes:
         - id: authmicroservice
           uri: https://auth-microservice-ufps.herokuapp.com/
